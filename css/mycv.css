@@ -1,0 +1,112 @@
+body {
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+/* 切換按鈕 */
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.toggle-btn {
+  background-color: #e3f2fd;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2a7f62;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+}
+
+.toggle-btn.active {
+  background-color: #2a7f62;
+  color: white;
+}
+
+/* 設定時間軸 */
+.timeline {
+  position: relative;
+  max-width: 600px;
+  margin: 30px auto;
+  padding-left: 40px;
+  /* border-left: 4px solid #2a7f62; */
+}
+
+/* 讓 timeline 的線只延伸到最後一個 `.timeline-circle` */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 20px; /* 避免超過最上圓點 */
+  left: -2px;
+  width: 4px;
+  height: calc(100% - 20px); /* 減去 present 的圓點 */
+  background-color: #2a7f62;
+}
+
+/* 隱藏 Education 頁面 */
+.education {
+  display: none;
+}
+
+/* 每個時間點 */
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+  opacity: 0;
+  /* transform: translateY(10px); */
+  /* transition: all 0.8s ease-in-out; */
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* 圓圈 */
+/* .timeline-circle {
+  width: 20px;
+  height: 20px;
+  background-color: #2a7f62;
+  border-radius: 50%;
+  position: absolute;
+  left: -12px;
+} */
+/* 讓圓點始終對齊時間軸 */
+.timeline-circle {
+  width: 20px;
+  height: 20px;
+  background-color: #2a7f62;
+  border-radius: 50%;
+  position: absolute;
+  left: -12px;
+}
+
+/* 內容 */
+.timeline-content {
+  background: white;
+  padding: 10px 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: left;
+  width: 100%;
+}
+
+/* 年份 */
+.timeline-year {
+  font-size: 14px;
+  color: #666;
+  display: block;
+  margin-top: 5px;
+}
+
+/* 滾動出現 */
+.timeline-item.show {
+  opacity: 1;
+  /* transform: translateY(0); */
+}

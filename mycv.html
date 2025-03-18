@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experience Timeline</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/mycv.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center mt-4">Experience Timeline</h2>
+
+      <!-- 切換按鈕 -->
+      <div class="toggle-buttons">
+        <button id="toggle-education" class="toggle-btn">
+          Education & Research
+        </button>
+        <button id="toggle-work" class="toggle-btn active">Work</button>
+      </div>
+
+      <div class="experience-container">
+        <!-- 教育經歷 (初始隱藏) -->
+        <div class="timeline education" id="education-panel">
+          <h2>Education & Research</h2>
+
+          <div class="timeline-item">
+            <div class="timeline-circle"></div>
+            <div class="timeline-content">
+              <h3><b>UWA Australia</b></h3>
+              <p><i>Master of Information Technology</i></p>
+              <span class="timeline-year">2024 - Present</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-circle"></div>
+            <div class="timeline-content">
+              <h3><b>NTHU Taiwan</b></h3>
+              <p><i>MS, Department of Engineering and System Science</i></p>
+              <p>
+                <i>Dissertation:</i> Development of Tilting Sample Holder for
+                Desktop Scanning Transmission Electron Microscope.
+              </p>
+              <span class="timeline-year">2017 - 2019</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-circle"></div>
+            <div class="timeline-content">
+              <h3><b>NTHU Taiwan</b></h3>
+              <p><i>BS, Department of Engineering and System Science</i></p>
+              <p>
+                <i>Senior Research:</i> Analysed the spectrum of atmospheric
+                pressure plasma using an RF power source.
+              </p>
+              <span class="timeline-year">2015 - 2016</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-circle"></div>
+            <div class="timeline-content">
+              <h3><b>NTHU Taiwan</b></h3>
+              <p><i>BS, Department of Engineering and System Science</i></p>
+              <span class="timeline-year">2013 - 2017</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 工作經歷 (預設顯示) -->
+        <div class="timeline work active" id="work-panel">
+          <h2>Work</h2>
+
+          <div class="timeline-item">
+            <div class="timeline-circle"></div>
+            <div class="timeline-content">
+              <h3><b>Sister Project WA</b></h3>
+              <p><i>IT & Data Science Intern</i></p>
+              <span class="timeline-year">2025 - Present</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-circle"></div>
+            <div class="timeline-content">
+              <h3><b>Taiwan Research Institute</b></h3>
+              <p><i>Senior Assistant Research Fellow</i></p>
+              <p>
+                Reviewed type test reports for high-voltage electrical equipment
+                from international and domestic sources.
+              </p>
+              <span class="timeline-year">2023 - 2024</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-circle"></div>
+            <div class="timeline-content">
+              <h3><b>TSMC Taiwan</b></h3>
+              <p><i>Process Engineer</i></p>
+              <p>
+                Performed statistical process control (SPC) analysis and led
+                departmental quality control.
+              </p>
+              <span class="timeline-year">2019 - 2021</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-circle"></div>
+            <div class="timeline-content">
+              <h3><b>NTHU Taiwan</b></h3>
+              <p><i>Instrumentation Centre - Operator</i></p>
+              <span class="timeline-year">2018 - 2019</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/mycv.js"></script>
+  </body>
+</html>
