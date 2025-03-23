@@ -10,12 +10,60 @@
     />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="css/mycv.css" />
+    <script src="js/mycv.js"></script>
   </head>
   <body>
-    <div class="container">
-      <h2 class="text-center mt-4">Experience Timeline</h2>
+    <!-- TODO: Link back to index page -->
+    <!-- TODO: Head of page -->
+    <!-- <div class="page-head"></div> -->
+    <!-- Add this section at the top of mycv.html body -->
+    <div class="intro-section">
+      <img
+        src="img/portrait.jpg"
+        alt="Portrait of ChienAn Tu"
+        class="intro-portrait"
+      />
+      <div>
+        <h2>Hi, I’m <span class="text-success">ChienAn Tu</span></h2>
+        <p>
+          I’m based in <b>Perth</b>, WA and I’m studying my 2<sup>nd</sup>
+          Master degree -- Master of Information Technology in UWA.
+        </p>
+      </div>
+    </div>
 
-      <!-- 切換按鈕 -->
+    <div class="container mt-4">
+      <div class="intro-detail">
+        <h3 class="intro-section-title">Current</h3>
+        <p>
+          I am studying Master of IT in UWA 2<sup>nd</sup> year and will
+          graduate in <u>December</u>, 2025. An IT & Data Science intern at
+          Sister Project, Ellenbrook.
+        </p>
+
+        <h3 class="intro-section-title">About Me</h3>
+        <p>
+          I’m from Taiwan and right now based in Perth, WA. I was a
+          semiconductor process engineer and now I’m seeking a career change –
+          to become a data scientist or IT. MIT will be my 2<sup>nd</sup> Master
+          <u>degree</u> and I’m really excited about being involved in this
+          wonderful industry. Apart from being techy-techy, I’m always happy to
+          grab or pour a coffee!
+        </p>
+
+        <h3 class="intro-section-title">Get in Touch</h3>
+        <p>
+          Phone: 0412-345-678<br />Email: myEmail@examplemail.com<br />Location:
+          999 This Street, Perth, WA
+        </p>
+      </div>
+    </div>
+
+    <!-- Experience Timeline -->
+    <div class="container">
+      <h2 class="text-success mt-4">Experience Timeline</h2>
+
+      <!-- Toggle btn -->
       <div class="toggle-buttons">
         <button id="toggle-education" class="toggle-btn">
           Education & Research
@@ -24,9 +72,9 @@
       </div>
 
       <div class="experience-container">
-        <!-- 教育經歷 (初始隱藏) -->
+        <!-- Education & Research (default-hidden) -->
         <div class="timeline education" id="education-panel">
-          <h2>Education & Research</h2>
+          <!-- <h2>Education & Research</h2> -->
 
           <div class="timeline-item">
             <div class="timeline-circle"></div>
@@ -73,9 +121,9 @@
           </div>
         </div>
 
-        <!-- 工作經歷 (預設顯示) -->
+        <!-- Work (default-show) -->
         <div class="timeline work active" id="work-panel">
-          <h2>Work</h2>
+          <!-- <h2>Work</h2> -->
 
           <div class="timeline-item">
             <div class="timeline-circle"></div>
@@ -123,7 +171,60 @@
         </div>
       </div>
     </div>
-
-    <script src="js/mycv.js"></script>
+    <div class="container">
+      <div class="project-section">
+        <h3 class="intro-section-title">Project</h3>
+        <a
+          href="index.html"
+          class="project-link d-flex align-items-center text-decoration-none"
+        >
+          <img
+            src="img/Icon.jpg"
+            alt="Project Icon"
+            class="project-icon me-2"
+          />
+          <div>
+            <h6 class="mb-1">
+              <strong>Frontend Coding Best Practices</strong>
+            </h6>
+            <p class="mb-0">
+              A guide to best practices in frontend development.
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- TODO: Reference -->
+    <div class="page-foot">
+      <div class="reference-section">
+        <h4>References</h4>
+        <ul>
+          <li>
+            Coding Best Practices Inspiration:
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Learn"
+              target="_blank"
+            >
+              MDN Web Docs – Learn Web Development
+            </a>
+          </li>
+          <li>
+            HTML/CSS Checklist Guidance:
+            <a
+              href="https://www.w3schools.com/html/html5_semantic_elements.asp"
+              target="_blank"
+            >
+              W3Schools HTML5 Semantic Elements
+            </a>
+          </li>
+          <li>
+            CV Layout Design Inspiration:
+            <a href="https://www.canva.com/resumes/templates/" target="_blank">
+              Canva Resume Templates
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>

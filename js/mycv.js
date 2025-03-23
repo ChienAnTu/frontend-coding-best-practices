@@ -27,7 +27,7 @@ $(document).ready(function () {
     });
   }
 
-  // 滾動時觸發動畫
+  // Activate on scroll
   $(window).on("scroll", revealTimelineItems);
-  revealTimelineItems(); // 初始檢查一次
+  revealTimelineItems(); // Initial check
 });

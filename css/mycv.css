@@ -4,10 +4,49 @@ body {
 }
 
 .container {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+/* --------------------------------------------------------------- */
+/* New Intro Section Styling */
+
+.intro-section {
+  background-color: #d7f2d6;
+  padding: 20px;
+  display: flex;
+  align-items: center;
   text-align: center;
+  /* max-width: 600px; */
+  /* margin: 0 auto; */
+  gap: 20px;
 }
 
-/* 切換按鈕 */
+.intro-portrait {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.highlighted-name {
+  color: #14532d;
+  /* text-decoration: underline; */
+}
+
+.intro-detail {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.intro-section-title {
+  color: #2a7f62;
+}
+
+/* -------------------------------------------------------- */
+
 .toggle-buttons {
   display: flex;
   justify-content: center;
@@ -15,7 +54,7 @@ body {
 }
 
 .toggle-btn {
-  background-color: #e3f2fd;
+  background-color: #9ac3e149;
   border: none;
   padding: 10px 20px;
   margin: 0 5px;
@@ -27,12 +66,15 @@ body {
   transition: background 0.3s ease-in-out;
 }
 
+.toggle-btn:hover {
+  background-color: #e3f2fd;
+}
+
 .toggle-btn.active {
   background-color: #2a7f62;
   color: white;
 }
-
-/* 設定時間軸 */
+/* --------------------Timeline------------------------- */
 .timeline {
   position: relative;
   max-width: 600px;
@@ -41,23 +83,20 @@ body {
   /* border-left: 4px solid #2a7f62; */
 }
 
-/* 讓 timeline 的線只延伸到最後一個 `.timeline-circle` */
 .timeline::before {
   content: "";
   position: absolute;
-  top: 20px; /* 避免超過最上圓點 */
+  top: 20px;
   left: -2px;
   width: 4px;
-  height: calc(100% - 20px); /* 減去 present 的圓點 */
+  height: calc(100% - 20px);
   background-color: #2a7f62;
 }
 
-/* 隱藏 Education 頁面 */
 .education {
   display: none;
 }
 
-/* 每個時間點 */
 .timeline-item {
   display: flex;
   align-items: center;
@@ -68,7 +107,6 @@ body {
   transition: opacity 0.8s ease-in-out;
 }
 
-/* 圓圈 */
 /* .timeline-circle {
   width: 20px;
   height: 20px;
@@ -77,7 +115,7 @@ body {
   position: absolute;
   left: -12px;
 } */
-/* 讓圓點始終對齊時間軸 */
+
 .timeline-circle {
   width: 20px;
   height: 20px;
@@ -87,7 +125,6 @@ body {
   left: -12px;
 }
 
-/* 內容 */
 .timeline-content {
   background: white;
   padding: 10px 20px;
@@ -97,7 +134,6 @@ body {
   width: 100%;
 }
 
-/* 年份 */
 .timeline-year {
   font-size: 14px;
   color: #666;
@@ -105,8 +141,43 @@ body {
   margin-top: 5px;
 }
 
-/* 滾動出現 */
 .timeline-item.show {
   opacity: 1;
-  /* transform: translateY(0); */
+  transform: translateY(0);
+}
+
+/* ------------------------Project section--------------------------- */
+.project-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------------------Reference----------------------- */
+.reference-section {
+  background-color: #eeeeee;
+  padding: 20px;
+  margin-top: 40px;
+  text-align: left;
+  border-top: 2px solid #ccc;
+}
+
+.reference-section h4 {
+  color: #2a7f62;
+  margin-bottom: 10px;
+}
+
+.reference-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.reference-section li {
+  margin-bottom: 8px;
+}
+
+.reference-section a {
+  color: #14532d;
+  text-decoration: underline;
 }
