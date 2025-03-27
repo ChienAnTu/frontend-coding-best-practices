@@ -20,16 +20,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/script.js"></script>
-
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
-
     <!-- Document Title -->
     <title>Coding Best Practices Checklist</title>
   </head>
   <body>
-    <!-- TODO: Add flying animal animation when click 15 boxes -->
     <!-- TODO: Adjust icons using SVG -->
+    <!-- TODO: Reward image inside reward-header -->
+    <!-- TODO: Toggle btn on bottom-right corner to goto top -->
     <div class="page-wrapper">
       <div class="page-header">
         <header>
@@ -51,6 +48,10 @@
           <h3>Pass 12 checks for reward!</h3>
           <p>Pass all 15 checks for hidden reward!</p>
           <p id="total-checked">You've pass 0/15 checks</p>
+          <!-- Image Display Toggle -->
+          <!-- TODO: Delete this button -->
+          <button class="btn" id="toggle-image-btn">Hide Image</button>
+          <div id="reward-container" class="reward-img-box"></div>
         </div>
 
         <section class="checklist-section">
@@ -67,8 +68,8 @@
 
           <!-- Progress bar -->
           <div class="progress-bar-container">
-            <div class="progress-bar" id="html-progress"></div>
-            <span class="progress-text" id="progress-text">0/15</span>
+            <div class="progress-bar" id="html-progress1"></div>
+            <span class="progress-text" id="progress-text1">0/15</span>
           </div>
 
           <div class="checklist-body">
@@ -78,39 +79,66 @@
                 <label for="checkbox1" class="s-checkbox-label">
                   <span class="custom-checkbox"></span>
                   <span class="checkbox-label-text">
-                    HTML5 Semantic Elements: HTML5 Semantic Elements are used
-                    appropriately (header, section, footer, main...)
+                    <strong>Declare the Document Type (Doctype): </strong> Helps
+                    browsers render pages in standards mode, ensuring consistent
+                    display and behavior across different browsers.
                   </span>
                 </label>
+                <div class="s-checkbox-codeblock">
+                  <pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+                </div>
               </li>
               <li class="s-checklist-item">
                 <input type="checkbox" id="checkbox2" class="s-checkbox" />
                 <label for="checkbox2" class="s-checkbox-label">
                   <span class="custom-checkbox"></span>
                   <span class="checkbox-label-text">
-                    Use meaningful `alt` attributes for images.
+                    <strong>Use HTML5 Semantic Elements: </strong>Improves
+                    structure, readability, and accessibility. Tags like
+                    <code>head</code>, <code>section</code>,
+                    <code>footer</code> give meaning to content.
                   </span>
                 </label>
+                <div class="s-checkbox-codeblock">
+                  <pre><code>&lt;head&gt;
+  ...
+  &lt;meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript"&gt;
+&lt;/head&gt;</code></pre>
+                </div>
               </li>
               <li class="s-checklist-item">
                 <input type="checkbox" id="checkbox3" class="s-checkbox" />
                 <label for="checkbox3" class="s-checkbox-label">
                   <span class="custom-checkbox"></span>
-                  <span class="checkbox-label-text"> Placeholder </span>
+                  <span class="checkbox-label-text">
+                    <strong>Provide Alternative Text for Images: </strong
+                    >Ensures accessibility and enhances SEO by describing images
+                    via the alt attribute.
+                  </span>
                 </label>
               </li>
               <li class="s-checklist-item">
                 <input type="checkbox" id="checkbox4" class="s-checkbox" />
                 <label for="checkbox4" class="s-checkbox-label">
                   <span class="custom-checkbox"></span>
-                  <span class="checkbox-label-text"> Placeholder </span>
+                  <span class="checkbox-label-text">
+                    <strong>Avoid Inline CSS: </strong>Keeps HTML clean and
+                    separates concerns. Use external stylesheets for better
+                    maintainability and reuse.
+                  </span>
                 </label>
               </li>
               <li class="s-checklist-item">
                 <input type="checkbox" id="checkbox5" class="s-checkbox" />
                 <label for="checkbox5" class="s-checkbox-label">
                   <span class="custom-checkbox"></span>
-                  <span class="checkbox-label-text"> Placeholder </span>
+                  <span class="checkbox-label-text">
+                    <strong
+                      >Place CSS Links in head and JavaScript at the End of
+                      body: </strong
+                    >Improves page load performance. Styles load first; scripts
+                    don’t block rendering of visible content.
+                  </span>
                 </label>
               </li>
             </ul>
@@ -130,8 +158,8 @@
           </div>
           <!-- Progress bar -->
           <div class="progress-bar-container">
-            <div class="progress-bar" id="html-progress"></div>
-            <span class="progress-text" id="progress-text">0/15</span>
+            <div class="progress-bar" id="html-progress2"></div>
+            <span class="progress-text" id="progress-text2">0/15</span>
           </div>
           <div class="checklist-body">
             <ul class="s-checklist-body">
@@ -140,7 +168,11 @@
                 <label for="checkbox6" class="s-checkbox-label">
                   <span class="custom-checkbox"></span>
                   <span class="checkbox-label-text">
-                    Use consistent naming conventions and avoid `!important`.
+                    <strong>Avoid Using <code>!important</code> Tag: </strong
+                    >Using <code>!important</code> breaks the natural CSS
+                    cascade and specificity system. It makes debugging harder
+                    and encourages poor design habits that lead to style
+                    conflicts and overrides.
                   </span>
                 </label>
               </li>
@@ -148,28 +180,57 @@
                 <input type="checkbox" id="checkbox7" class="s-checkbox" />
                 <label for="checkbox7" class="s-checkbox-label">
                   <span class="custom-checkbox"></span>
-                  <span class="checkbox-label-text"> Placeholder </span>
+                  <span class="checkbox-label-text">
+                    <strong
+                      >Use Consistent Naming Conventions (e.g., BEM):
+                    </strong>
+                    Consistent and semantic class naming like
+                    <code>block__element--modifier</code> improves code
+                    readability, team collaboration, and avoids name collisions.
+                    It helps scale CSS in large projects.
+                  </span>
                 </label>
               </li>
               <li class="s-checklist-item">
                 <input type="checkbox" id="checkbox8" class="s-checkbox" />
                 <label for="checkbox8" class="s-checkbox-label">
                   <span class="custom-checkbox"></span>
-                  <span class="checkbox-label-text"> Placeholder </span>
+                  <span class="checkbox-label-text">
+                    <strong>Modularize and Reuse CSS Components: </strong> Avoid
+                    repeating styles by creating reusable classes like
+                    <code>.btn</code>, <code>.card</code>, or
+                    <code>.modal</code>. This improves consistency and reduces
+                    CSS file size, making maintenance easier.
+                  </span>
                 </label>
               </li>
               <li class="s-checklist-item">
                 <input type="checkbox" id="checkbox9" class="s-checkbox" />
                 <label for="checkbox9" class="s-checkbox-label">
                   <span class="custom-checkbox"></span>
-                  <span class="checkbox-label-text"> Placeholder </span>
+                  <span class="checkbox-label-text">
+                    <strong
+                      >Avoid Inline CSS and Use External Stylesheets:
+                    </strong>
+                    Inline styles tightly couple structure and presentation.
+                    Using external CSS files promotes separation of concerns,
+                    allows browser caching, and improves maintainability.
+                  </span>
                 </label>
               </li>
               <li class="s-checklist-item">
                 <input type="checkbox" id="checkbox10" class="s-checkbox" />
                 <label for="checkbox10" class="s-checkbox-label">
                   <span class="custom-checkbox"></span>
-                  <span class="checkbox-label-text"> Placeholder </span>
+                  <span class="checkbox-label-text">
+                    <strong
+                      >Ensure Accessibility with Contrast and Focus Styles:
+                    </strong>
+                    Good CSS should support accessibility by ensuring readable
+                    contrast, visible <code>:focus</code> outlines, and
+                    responsive font sizes. This helps users with disabilities
+                    interact with the page more effectively.
+                  </span>
                 </label>
               </li>
             </ul>
@@ -190,8 +251,8 @@
 
           <!-- Progress bar -->
           <div class="progress-bar-container">
-            <div class="progress-bar" id="html-progress"></div>
-            <span class="progress-text" id="progress-text">0/15</span>
+            <div class="progress-bar" id="html-progress3"></div>
+            <span class="progress-text" id="progress-text3">0/15</span>
           </div>
 
           <div class="checklist-body">
@@ -201,7 +262,11 @@
                 <label for="checkbox11" class="s-checkbox-label">
                   <span class="custom-checkbox"></span>
                   <span class="checkbox-label-text">
-                    Avoid using global variables unnecessarily.
+                    <strong>Avoid Polluting the Global Namespace: </strong>
+                    Avoid defining variables or functions in the global scope.
+                    Instead, encapsulate code inside <code>functions</code>,
+                    <code>objects</code>, or <code>modules</code> to prevent
+                    conflicts and improve maintainability.
                   </span>
                 </label>
               </li>
@@ -209,37 +274,68 @@
                 <input type="checkbox" id="checkbox12" class="s-checkbox" />
                 <label for="checkbox12" class="s-checkbox-label">
                   <span class="custom-checkbox"></span>
-                  <span class="checkbox-label-text"> Placeholder </span>
+                  <span class="checkbox-label-text">
+                    <strong
+                      >Always Declare Variables with <code>let</code> or
+                      <code>const</code>:
+                    </strong>
+                    Using <code>let</code> and <code>const</code> avoids
+                    accidental global variables, ensures block-level scoping,
+                    and makes code more predictable and safer to execute.
+                  </span>
                 </label>
               </li>
               <li class="s-checklist-item">
                 <input type="checkbox" id="checkbox13" class="s-checkbox" />
                 <label for="checkbox13" class="s-checkbox-label">
                   <span class="custom-checkbox"></span>
-                  <span class="checkbox-label-text"> Placeholder </span>
+                  <span class="checkbox-label-text">
+                    <strong>Use Strict Mode: </strong> Add
+                    <code>'use strict';</code> at the beginning of scripts or
+                    functions to catch common mistakes and prevent unsafe
+                    actions like using undeclared variables.
+                  </span>
                 </label>
               </li>
               <li class="s-checklist-item">
                 <input type="checkbox" id="checkbox14" class="s-checkbox" />
                 <label for="checkbox14" class="s-checkbox-label">
                   <span class="custom-checkbox"></span>
-                  <span class="checkbox-label-text"> Placeholder </span>
+                  <span class="checkbox-label-text">
+                    <strong>Avoid Using <code>eval()</code>: </strong>
+                    <code>eval()</code> executes arbitrary code, posing serious
+                    security risks and hindering performance. Avoid it to keep
+                    your code secure and optimized.
+                  </span>
                 </label>
               </li>
               <li class="s-checklist-item">
                 <input type="checkbox" id="checkbox15" class="s-checkbox" />
                 <label for="checkbox15" class="s-checkbox-label">
                   <span class="custom-checkbox"></span>
-                  <span class="checkbox-label-text"> Placeholder </span>
+                  <span class="checkbox-label-text">
+                    <strong
+                      >Use Feature Detection, Not Browser Detection:
+                    </strong>
+                    Test for features (e.g.,
+                    <code>'geolocation' in navigator</code>) instead of browser
+                    types. This ensures better compatibility and future-proof
+                    behavior.
+                  </span>
                 </label>
               </li>
             </ul>
           </div>
         </section>
-
-        <!-- import JavaScript -->
-        <!-- <script src="js/script.js"></script> -->
       </div>
+      <!-- Bottom reminder text -->
+      <p id="bottom-hint" class="bottom-hint" style="display: none">
+        🎉 You've passed the reward threshold! Go back to top to see your prize!
+      </p>
+      <!-- Back to Top Button -->
+      <button id="back-to-top" title="Back to Top">⬆</button>
     </div>
+    <!-- import JavaScript -->
+    <script src="js/script.js"></script>
   </body>
 </html>

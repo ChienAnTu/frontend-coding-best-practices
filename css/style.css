@@ -8,49 +8,25 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial,
-    sans-serif;
+  font-family: 
+    /* "Open Sans"; */ sans-serif;
   margin: 0;
+  padding: 0;
 }
 
-/* .s-header {
-  grid-row: 1;
-  grid-column-start: 2;
-  padding: 50px 0;
-  background-color: #a41269;
-  background-image: linear-gradient(45deg, #36609e, #3347bb);
-  color: #fff;
-  font-size: 1rem;
-  text-align: center;
-  position: relative;
-} */
-
+/* --------------------------------Grid----------------------- */
 .page-wrapper {
-  /* display: grid; */
-  grid-template-columns: auto;
-  grid-template-areas: a, b, c;
-  /* background-color: #369c9e; */
+  display: auto;
+  background-color: #e9f6f6;
 }
 
 .page-wrapper .page-header {
-  grid-area: a;
-  /* background-color: #3f4f67; */
+  background-color: #3f4f67;
 }
 
 .page-wrapper .page-main {
-  grid-area: b;
-  /* background-color: rgb(176, 190, 185); */
+  background-color: rgb(255, 255, 255);
 }
-
-/* .sub-heading {
-  margin: 5px 15px;
-  font-family: sans-serif;
-  color: rgba(254, 254, 254, 0.852);
-  background-color: bisque;
-  font-size: 1.3rem;
-  line-height: 1.5;
-} */
 
 .page-header {
   background: linear-gradient(135deg, #052c58, #5f02d0);
@@ -70,7 +46,7 @@ body {
 .page-main {
   margin: 20px auto;
   padding: 15px;
-  max-width: 600px;
+  max-width: 768px;
   /* border: 1px solid #ccc; */
   /* border-radius: 8px; */
   /* background-color: #f9f9f9; */
@@ -82,7 +58,7 @@ body {
 .checklist-section {
   margin: 20px auto;
   padding: 15px;
-  max-width: 600px;
+  max-width: 768px;
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #f9f9f9;
@@ -105,14 +81,14 @@ body {
 /* list body */
 .s-checklist-body {
   list-style: none;
-  display: grid;
+  display: block;
   padding: 0;
   margin: 0;
 }
 
 /* For every list item */
 .s-checklist-item {
-  display: flex;
+  display: block;
   align-items: center;
   gap: 10px;
   padding: 10px;
@@ -133,6 +109,24 @@ body {
   align-items: center;
   gap: 10px;
   width: 100%;
+}
+
+.s-checkbox-codeblock {
+  display: block;
+  margin-left: 30px;
+}
+
+.s-checkbox-codeblock pre {
+  display: block;
+  background-color: rgba(128, 128, 128, 0.171);
+  border: 1px solid #f4b909;
+  padding: 1em;
+  margin-top: 8px;
+  /* font-family: Consolas, monospace; */
+  /* font-size: 0.95em; */
+  /* white-space: pre; */
+  /* overflow-x: auto; */
+  border-radius: 6px;
 }
 
 /* Hide original checkbox */
@@ -167,18 +161,6 @@ body {
   font-size: 14px;
   font-weight: bold;
 }
-
-/*------------Input below label----------------*/
-/* .s-checkbox-label .s-checkbox:checked + .custom-checkbox {
-  background-color: #007bff;
-  border-color: #007bff;
-}
-.s-checkbox-label .s-checkbox:checked + .custom-checkbox::after {
-  content: "✔";
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-} */
 
 /* Text */
 .checkbox-label-text {
@@ -265,4 +247,83 @@ body {
 /* folded checklist-body */
 .collapsed {
   display: none;
+}
+
+/* -----------Background Animation-------------- */
+.flying-icon {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  top: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  animation: flyAcross 8s linear infinite;
+}
+
+@keyframes flyAcross {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(0, -120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* -----------------reward img--------------- */
+/* Reward image toggle */
+#toggle-image-btn {
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: none;
+}
+#toggle-image-btn:hover {
+  background-color: #0056b3;
+}
+
+.reward-img-box img {
+  margin-top: 15px;
+  max-width: 300px;
+  max-height: 200px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* -----------------------Bottom hint--------------- */
+/* Bottom hint styling */
+.bottom-hint {
+  text-align: center;
+  color: #5c2d91;
+  font-weight: bold;
+  padding: 15px;
+  margin-top: 30px;
+  background-color: #f0e7ff;
+  border-radius: 6px;
+}
+
+/* --------------------Floating back-to-top button------------------ */
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  z-index: 999;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+#back-to-top:hover {
+  opacity: 1;
 }

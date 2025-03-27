@@ -1,41 +1,88 @@
-// TODO: AJAX cute image : Change to - Only 1 threshold --12 checked
-// ----------------------------------------------------------
-// NEW: AJAX & Local storage test----------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll(".checklist-section");
   const totalCheckedText = document.getElementById("total-checked");
-  const rewardContainer = document.createElement("div");
-  rewardContainer.id = "reward-container";
-  rewardContainer.style.textAlign = "center";
-  document.body.appendChild(rewardContainer);
+  const checkboxes = document.querySelectorAll(".s-checkbox");
 
-  let animalImageCount = 0; // Track displayed images
+  const rewardContainer = $("#reward-container");
+  const bottomHint = $("#bottom-hint");
+  const toggleImageBtn = $("#toggle-image-btn");
+  let imageVisible = true;
+  let imageLoaded = false;
 
+  // Toggle button to show/hide cat image
+  toggleImageBtn.on("click", function () {
+    imageVisible = !imageVisible;
+    rewardContainer.toggle(imageVisible);
+    toggleImageBtn.text(imageVisible ? "Hide Image" : "Show Image");
+  });
+
+  // Back to top button
+  const backToTop = $("#back-to-top");
+  backToTop.on("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Scroll show/hide behavior
+  $(window).on("scroll", function () {
+    if ($(window).scrollTop() > 200) {
+      backToTop.fadeIn();
+    } else {
+      backToTop.fadeOut();
+    }
+  });
+
+  // Function for animation
+  function triggerFlyingIcons() {
+    for (let i = 0; i < 10; i++) {
+      const icon = document.createElement("img");
+      icon.src = "https://cdn-icons-png.flaticon.com/512/11565/11565122.png";
+      icon.classList.add("flying-icon");
+
+      // Different delay for each icon
+      icon.style.left = Math.random() * 100 + "vw";
+      icon.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(icon);
+    }
+  }
+  // Function for removing flying icons animation
+  function removeFlyingIcons() {
+    document.querySelectorAll(".flying-icon").forEach((icon) => icon.remove());
+  }
+
+  // Function to update total checked count and activities
   function updateTotalChecked() {
+    // Count checked checkboxes
     const checkedCount = document.querySelectorAll(
       ".s-checkbox:checked"
     ).length;
-    const totalCount = document.querySelectorAll(".s-checkbox").length;
+    const totalCount = checkboxes.length;
     totalCheckedText.textContent = `Checked ${checkedCount}/${totalCount}`;
 
-    if (checkedCount >= 12 && animalImageCount === 0) {
-      loadRandomAnimalImage();
-      animalImageCount = 1;
+    // Reward - random cat image logic
+    if (checkedCount >= 12) {
+      bottomHint.show();
+      if (!imageLoaded) {
+        loadRandomCatImage();
+      }
+    } else {
+      bottomHint.hide();
+      rewardContainer.empty();
+      imageLoaded = false;
     }
-    // TODO: Can change this to else if
-    if (
-      checkedCount >= 15 &&
-      (animalImageCount === 1 || animalImageCount === 0)
-    ) {
-      loadRandomAnimalImage();
-      animalImageCount = 2;
-    } else if (checkedCount < 12) {
-      removeAnimalImage();
-      animalImageCount = 0;
+
+    // Animation trigger logic
+    if (checkedCount >= 15) {
+      if (!document.querySelector(".flying-icon")) {
+        triggerFlyingIcons();
+      }
+    } else {
+      removeFlyingIcons();
     }
+
     saveState();
   }
 
+  // Function to update progress bar
   function updateProgressBar(section) {
     const checkboxes = section.querySelectorAll(".s-checkbox");
     const progressBar = section.querySelector(".progress-bar");
@@ -69,24 +116,29 @@ document.addEventListener("DOMContentLoaded", function () {
     progressText.style.color = textColor;
   }
 
-  function loadRandomAnimalImage() {
-    fetch("https://random.dog/woof.json") // Public API for random dog images
-      .then((response) => response.json())
-      .then((data) => {
+  // Function to load random cat img using AJAX through public API
+  function loadRandomCatImage() {
+    const catAPI = "https://api.thecatapi.com/v1/images/search";
+    $.ajax({
+      url: catAPI,
+      method: "GET",
+      success: function (data) {
         const img = document.createElement("img");
-        img.src = data.url;
-        img.alt = "Random Animal";
-        img.style.maxWidth = "300px";
-        img.style.marginTop = "20px";
-        rewardContainer.appendChild(img);
-      })
-      .catch((error) => console.error("Error loading animal image:", error));
+        img.src = data[0].url;
+        img.alt = "Random Cat";
+        rewardContainer.empty().append(img);
+        rewardContainer.show();
+        imageVisible = true;
+        toggleImageBtn.text("Hide Image");
+        imageLoaded = true;
+      },
+      error: function (error) {
+        console.error("Error loading cat image:", error);
+      },
+    });
   }
 
-  function removeAnimalImage() {
-    rewardContainer.innerHTML = "";
-  }
-
+  // Function to save state in local storage
   function saveState() {
     const state = {
       checkboxState: {},
@@ -107,6 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("savedState", JSON.stringify(state));
   }
 
+  // Function to load state from local storage
   function loadState() {
     const savedState = JSON.parse(localStorage.getItem("savedState")) || {};
     if (savedState.checkboxState) {
