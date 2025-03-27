@@ -12,9 +12,6 @@ $(document).ready(function () {
     $("#toggle-work").addClass("active");
     $("#toggle-education").removeClass("active");
   });
-});
-
-$(document).ready(function () {
   function revealTimelineItems() {
     $(".timeline-item").each(function () {
       let windowHeight = $(window).height();
@@ -31,3 +28,21 @@ $(document).ready(function () {
   $(window).on("scroll", revealTimelineItems);
   revealTimelineItems(); // Initial check
 });
+
+// $(document).ready(function () {
+//   function revealTimelineItems() {
+//     $(".timeline-item").each(function () {
+//       let windowHeight = $(window).height();
+//       let elementTop = $(this).offset().top;
+//       let scrollTop = $(window).scrollTop();
+
+//       if (elementTop < windowHeight + scrollTop - 50) {
+//         $(this).addClass("show");
+//       }
+//     });
+//   }
+
+//   // Activate on scroll
+//   $(window).on("scroll", revealTimelineItems);
+//   revealTimelineItems(); // Initial check
+// });

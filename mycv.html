@@ -13,17 +13,15 @@
     <script src="js/mycv.js"></script>
   </head>
   <body>
-    <!-- TODO: Link back to index page -->
     <!-- TODO: Head of page -->
-    <!-- <div class="page-head"></div> -->
-    <!-- Add this section at the top of mycv.html body -->
+    <!-- TODO: Add a side NavBar -->
     <div class="intro-section">
-      <img
-        src="img/portrait.jpg"
-        alt="Portrait of ChienAn Tu"
-        class="intro-portrait"
-      />
-      <div>
+      <div class="intro-detail">
+        <img
+          src="img/portrait.jpg"
+          alt="Portrait of ChienAn Tu"
+          class="intro-portrait"
+        />
         <h2>Hi, I’m <span class="text-success">ChienAn Tu</span></h2>
         <p>
           I’m based in <b>Perth</b>, WA and I’m studying my 2<sup>nd</sup>
@@ -32,7 +30,7 @@
       </div>
     </div>
 
-    <div class="container mt-4">
+    <div class="container">
       <div class="intro-detail">
         <h3 class="intro-section-title">Current</h3>
         <p>
@@ -61,7 +59,7 @@
 
     <!-- Experience Timeline -->
     <div class="container">
-      <h2 class="text-success mt-4">Experience Timeline</h2>
+      <h2 class="text-success">Experience Timeline</h2>
 
       <!-- Toggle btn -->
       <div class="toggle-buttons">
@@ -94,6 +92,17 @@
                 <i>Dissertation:</i> Development of Tilting Sample Holder for
                 Desktop Scanning Transmission Electron Microscope.
               </p>
+              <ul>
+                <li>
+                  Developed sample holder of scanning transmission electron
+                  microscope, contains functions of tilting and fluid sample
+                  holding.
+                </li>
+                <li>
+                  Optimized recent design to improve the convenience of
+                  components assembling.
+                </li>
+              </ul>
               <span class="timeline-year">2017 - 2019</span>
             </div>
           </div>
@@ -103,10 +112,15 @@
             <div class="timeline-content">
               <h3><b>NTHU Taiwan</b></h3>
               <p><i>BS, Department of Engineering and System Science</i></p>
-              <p>
-                <i>Senior Research:</i> Analysed the spectrum of atmospheric
-                pressure plasma using an RF power source.
-              </p>
+              <p><i>Senior Research:</i></p>
+              <ul>
+                <li>
+                  Analyzed spectrum of atmospheric pressure plasma using RF
+                  power source.
+                </li>
+                <li>Analyzed applications in coating process.</li>
+              </ul>
+
               <span class="timeline-year">2015 - 2016</span>
             </div>
           </div>
@@ -139,10 +153,28 @@
             <div class="timeline-content">
               <h3><b>Taiwan Research Institute</b></h3>
               <p><i>Senior Assistant Research Fellow</i></p>
-              <p>
-                Reviewed type test reports for high-voltage electrical equipment
-                from international and domestic sources.
-              </p>
+              <ul>
+                <li>
+                  Reviewed type test reports for high-voltage (hv) electrical
+                  equipment for both international and domestic sources.
+                </li>
+                <li>
+                  Convened domestic technical conferences to foster advancements
+                  in domestic hv electrical equipment manufacturing technology.
+                </li>
+                <li>
+                  Conducted seminars and training sessions for domestic hv
+                  electrical equipment manufacturers.
+                </li>
+                <li>
+                  Studied international standards such as IEC and IEEE related
+                  to hv electrical equipment and conducted differential analysis
+                  and comparisons with domestic standards.
+                </li>
+                <li>
+                  Authored periodic reports for the National Energy Project.
+                </li>
+              </ul>
               <span class="timeline-year">2023 - 2024</span>
             </div>
           </div>
@@ -152,10 +184,42 @@
             <div class="timeline-content">
               <h3><b>TSMC Taiwan</b></h3>
               <p><i>Process Engineer</i></p>
-              <p>
-                Performed statistical process control (SPC) analysis and led
-                departmental quality control.
-              </p>
+              <ul>
+                <li>
+                  Responsible for statistical process control (SPC) analysis and
+                  served as the head of departmental quality control.
+                </li>
+                <li>
+                  Led and executed projects for the advancement of the
+                  chemical-mechanical planarization (CMP) process, resulting in
+                  increased production capacity.
+                </li>
+                <li>
+                  Achieved substantial enhancements in production capacity and
+                  significant reduction in labor costs through the analysis of
+                  measurement instrument modes and optimization.
+                </li>
+                <li>
+                  Conducted quantitative analysis using scrapped wafers counts
+                  to identify potential defects and assisted in ensuring machine
+                  stability.
+                </li>
+                <li>Analyzed CMP defects for raw material quality control.</li>
+                <li>
+                  Supervised optical measurement instruments, with
+                  responsibilities including the development of standard
+                  operating procedures (SOPs) and stability control.
+                </li>
+                <li>
+                  Performed wafer acceptance tests (WAT) for electrical
+                  analysis, established measurement programs, and customized
+                  measurement programs for specialty products.
+                </li>
+                <li>
+                  Oversaw production line material control, prepared reports for
+                  production meetings, and authored periodic reports.
+                </li>
+              </ul>
               <span class="timeline-year">2019 - 2021</span>
             </div>
           </div>
@@ -164,8 +228,47 @@
             <div class="timeline-circle"></div>
             <div class="timeline-content">
               <h3><b>NTHU Taiwan</b></h3>
-              <p><i>Instrumentation Centre - Operator</i></p>
+              <p><i>Instrumentation Centre - SEM Operator</i></p>
+              <ul>
+                <li>
+                  Utilized high resolution thermal field emission scanning
+                  electron microscope (HRFEG-SEM) to measure and analyze
+                  customer sample specimens.
+                </li>
+                <li>
+                  Operated a gold-platinum evaporator to apply a coating to
+                  sample specimens, facilitating precise measurements.
+                </li>
+                <li>
+                  Conducted qualitative and semi-quantitative analyses by
+                  combining energy dispersive X-ray Spectroscopy (EDS) with SEM
+                  imaging.
+                </li>
+              </ul>
               <span class="timeline-year">2018 - 2019</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-circle"></div>
+            <div class="timeline-content">
+              <h3><b>TEMIC Taiwan</b></h3>
+              <p><i>R&D Intern</i></p>
+              <ul>
+                <li>
+                  Developed a dual-axis tilting sample holder of scanning
+                  transmission electron microscope (STEM) w/ CAD drawings.
+                </li>
+                <li>
+                  Investigated a novel tabletop electron microscope through
+                  university industry cooperation project.
+                </li>
+                <li>
+                  Optimized instrument resolution through analysis of
+                  publications and the implementation of COMSOL simulations.
+                </li>
+              </ul>
+              <span class="timeline-year">2017 - 2019</span>
             </div>
           </div>
         </div>
@@ -185,43 +288,63 @@
           />
           <div>
             <h6 class="mb-1">
-              <strong>Frontend Coding Best Practices</strong>
+              <strong>Frontend Coding Best Practices Checklist</strong>
             </h6>
             <p class="mb-0">
-              A guide to best practices in frontend development.
+              A checklist to best practices in frontend HTML/CSS/JavaScript
+              development.
             </p>
           </div>
         </a>
       </div>
     </div>
     <!-- TODO: Reference -->
-    <div class="page-foot">
+    <div class="page-footer">
       <div class="reference-section">
         <h4>References</h4>
+        <h5><strong>References for Coding Best Practices</strong></h5>
         <ul>
           <li>
-            Coding Best Practices Inspiration:
             <a
-              href="https://developer.mozilla.org/en-US/docs/Learn"
+              href="https://kinsta.com/blog/css-best-practices/"
               target="_blank"
             >
-              MDN Web Docs – Learn Web Development
+              CSS Best Practices
             </a>
           </li>
           <li>
-            HTML/CSS Checklist Guidance:
             <a
-              href="https://www.w3schools.com/html/html5_semantic_elements.asp"
+              href="https://www.codeproject.com/Tips/666578/HTML-and-Some-CSS-Best-Practice"
               target="_blank"
             >
-              W3Schools HTML5 Semantic Elements
+              HTML and Some CSS Best Practice
             </a>
           </li>
           <li>
-            CV Layout Design Inspiration:
-            <a href="https://www.canva.com/resumes/templates/" target="_blank">
-              Canva Resume Templates
+            <a
+              href="https://www.w3.org/wiki/JavaScript_best_practices"
+              target="_blank"
+            >
+              JavaScript Best Practices
             </a>
+          </li>
+          <li>
+            <a href="https://frontendchecklist.io/" target="_blank"
+              >Frontend Checklist</a
+            >
+          </li>
+        </ul>
+        <h5><strong>How I Use AI</strong></h5>
+        <ul>
+          <li>Github Copilot is used to convert some text into list.</li>
+          <li>DALL-E is used to generate the project icon.</li>
+          <li>ChatGPT is used to convert some JavaScript to jQuery.</li>
+          <li>
+            ChatGPT is used to give examples of CSS styles and convert some CSS
+            to Bootstrap.
+          </li>
+          <li>
+            ChatGPT is used to derive some logic for the JavaScript functions.
           </li>
         </ul>
       </div>
